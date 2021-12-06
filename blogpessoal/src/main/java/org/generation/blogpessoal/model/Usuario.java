@@ -39,6 +39,7 @@ public class Usuario {
 	private String senha;
 
 	private String foto;
+	private String tipo;
 
 	@Column(name = "dt_nascimento")
 	@JsonFormat(pattern = "yyyy-MM-dd")
@@ -49,12 +50,14 @@ public class Usuario {
 	private List<Postagem> minhasPostagens = new ArrayList<>();
 
 // Primeiro método Construtor - Com os atributos
-	public Usuario(long id, String nome, String usuario, String senha, LocalDate dataNascimento) {
+	public Usuario(long id, String nome, String usuario, String senha, LocalDate dataNascimento, String foto, String tipo) {
 		this.id = id;
 		this.nome = nome;
 		this.usuario = usuario;
 		this.senha = senha;
 		this.dataNascimento = dataNascimento;
+		this.tipo = tipo;
+		this.foto = foto;
 	}
 
 // Segundo método Construtor - Sem os atributos
@@ -115,6 +118,14 @@ public class Usuario {
 
 	public void setMinhasPostagens(List<Postagem> minhasPostagens) {
 		this.minhasPostagens = minhasPostagens;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 
 }
