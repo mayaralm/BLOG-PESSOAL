@@ -10,8 +10,6 @@ import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
-
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -32,7 +30,7 @@ class UsuarioTest {
 	@BeforeEach
 	public void start() {
 		LocalDate data = LocalDate.parse("2000-07-22", DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-		usuario = new Usuario(0L, "João da Silva", "joao@email.com.br", "13465278", null);
+		usuario = new Usuario(0L, "João da Silva", "joao@email.com.br", "13465278",data,"normal","foto");
 	}
 
 	@Test
